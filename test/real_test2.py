@@ -19,4 +19,3 @@ def test_total_count():
  total_item = (len(keys) + len(keys2) + len(keys3))
  assert data['total'] == total_item, 'Несоответствие количества регионов'
 
-test_total_count()

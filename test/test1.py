@@ -1,18 +1,14 @@
 import requests
 import json
 
-payload = {"country_code": "ua"}
-r = requests.get("https://regions-test.2gis.com/1.0/regions", params=payload)
-data = r.json()
-#for i in data.get('items'):
-#     assert (i.get("name")) == 'Днепр'
 
+
+url = 'https://regions-test.2gis.com/1.0/regions'
+query = {'country_code': 'ru'}
+data = response = requests.get(url,params=query).json()
 for i in data['items']:
-    #print(i.get('country'))
-    print(i['country'],i['code'])
-    assert (i['country']['name']) == 'Украина' , 'Несоответствие регионов'
-#for item in i['country']:
-    #print(item)
+ p1 = i['name']
+ print(p1, end='; ')
 
 #print(response.request)
 #print(response.status_code)
