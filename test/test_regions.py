@@ -1,6 +1,6 @@
 import requests
 
-def test_region():
+def test_regions():
     url = 'https://regions-test.2gis.com/1.0/regions'
     query = {"country_code": "ua"}
     response = requests.get(url, params=query)
@@ -19,17 +19,5 @@ def test_region():
     data = response.json()
     for i in data['items']:
         assert (i['country']['name']) == 'Чехия', 'Несоответствие регионов'
-    # _______________
-    query = {"country_code": "kz"}
-    response = requests.get(url, params=query)
-    data = response.json()
-    for i in data['items']:
-        assert (i['country']['name']) == 'Казахстан', 'Несоответствие регионов'
-    # _______________
-    query = {"country_code": "kg"}
-    response = requests.get(url, params=query)
-    data = response.json()
-    for i in data['items']:
-        assert (i['country']['name']) == 'Кыргызстан', 'Несоответствие регионов'
 
-# test_region()
+

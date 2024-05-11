@@ -1,4 +1,3 @@
-import json
 import requests
 
 def test_total_count():
