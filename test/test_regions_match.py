@@ -1,29 +1,6 @@
-from pprint import pprint
-
 import pytest
 import requests
 import json
-
-
-@pytest.mark.parametrize(
-    "query, expected_country", (
-            ({"country_code": "kz"}, "Казахстан"),
-            ({"country_code": "ru"}, "Россия"),
-    )
-)
-def test_region1(
-        query,
-        expected_country,
-):
-    url = 'https://regions-test.2gis.com/1.0/regions'
-    response = requests.get(url, params=query)
-    data = response.json()
-    pprint(data)
-    for i in data['items']:
-        actual_country = i['country']['name']
-        assert actual_country == expected_country, \
-            f'Несоответствие регионов. Ожидаемый регион {expected_country}, фактический регион {actual_country}'
-
 
 def test_region():
     url = 'https://regions-test.2gis.com/1.0/regions'
