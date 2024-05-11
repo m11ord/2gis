@@ -1,6 +1,4 @@
-import pytest
 import requests
-import json
 
 def test_region():
     url = 'https://regions-test.2gis.com/1.0/regions'
