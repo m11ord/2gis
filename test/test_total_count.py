@@ -1,5 +1,6 @@
 import requests
 
+
 def test_total_count():
  query = {"page": "1"}
  response = requests.get('https://regions-test.2gis.com/1.0/regions', params=query)
